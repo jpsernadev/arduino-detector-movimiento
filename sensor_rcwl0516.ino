@@ -61,6 +61,7 @@ void loop() {
     Serial.println("RFID Tag detectado.");
     active = false;
     digitalWrite(deactivatedLed, HIGH);
+    digitalWrite(led, LOW);
     Serial.println("DESACTIVADO SENSOR");    
   } 
 
@@ -85,12 +86,12 @@ void detection() {
 void getDateTime() {
   HoraFecha = rtc.now(); //obtenemos la hora y fecha actual
    
-  segundo = HoraFecha.second();
-  minuto = HoraFecha.minute();
-  hora = HoraFecha.hour();
-  dia = HoraFecha.day();
-  mes = HoraFecha.month();
-  anio = HoraFecha.year();
+  segundo=HoraFecha.second();
+  minuto=HoraFecha.minute();
+  hora=HoraFecha.hour();
+  dia=HoraFecha.day();
+  mes=HoraFecha.month();
+  anio=HoraFecha.year();
 
   //Enviamos por el puerto serie la hora y fecha.
   Serial.print("hora = ");
